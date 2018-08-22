@@ -3,10 +3,17 @@ language: php
 php:
   - 7.2
 
+install:
+  - composer install
+
+script:
+  - vendor/bin/sculpin generate --env=prod
+
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
+  local-dir: output_prod
   on:
     branch: master
