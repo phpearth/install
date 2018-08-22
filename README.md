@@ -1,2 +1,3 @@
-# install
+# Install
+
 PHP installation
